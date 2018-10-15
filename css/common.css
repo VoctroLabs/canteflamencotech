@@ -1,0 +1,297 @@
+body {
+    padding-top: 50px;
+    position: relative;
+}
+:focus, a:focus {
+    outline: none; /* remove typical bootstrap blue outline when focused */
+}
+.navbar {
+    border-color: transparent;
+    background-color: #FFFFFF;
+}
+.navbar .navbar-header {
+    padding-left: 30px;
+}
+.navbar .navbar-header .navbar-brand {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+}
+.navbar .navbar-header .navbar-brand img {
+    height: 32px;
+}
+.navbar .navbar-header .navbar-toggle:focus {
+    background-color: transparent;
+}
+/* center align navbar items */
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    #navbar {
+        background-color: rgb(231,231,231);
+    }
+}
+#navbar a {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #3C3C3B;
+    text-decoration: none;
+}
+#navbar a:hover {
+    text-decoration: underline;
+}
+#navbar a.navbar-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 9px;
+    margin-bottom: 0;
+}
+div {
+    z-index: 1;
+}
+#rubric {
+    position: relative;
+}
+#rubric-inner:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../img/rubric_small.png"), url("../img/rubric_big.png"), url("../img/rubric_small.png"), url("../img/rubric_big.png");
+    background-position: -95px 0px, -200px 650px, 90vw 450px, 85vw 1150px;
+    background-repeat: repeat-y;
+    z-index: 0;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    #rubric-inner:after {
+        background-position: -150px 0px, -300px 650px, 90vw 450px, 85vw 1150px;
+    }
+}
+@media (max-width: 767px) {
+    #rubric-inner:after {
+        background-image: none;
+    }
+}
+.section {
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.grey-bg {
+    background-color: rgb(247,247,247);
+}
+h1 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    color: #575756;;
+}
+h2 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: #575756;
+}
+h3 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #575756;;
+}
+h4 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #575756;;
+}
+h5 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #B1B1B1;
+}
+h6 {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #B1B1B1;
+}
+a {
+    color: #575756;
+    text-decoration: underline;
+}
+a:hover {
+    color: #322e2d;
+}
+p {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #575756;;
+}
+hr {
+    border-top: 3px solid #575756;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 125px;
+}
+.subtitle {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: lighter;
+    color: #575756;;
+}
+.icon-img {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    height: 183px;
+    width: 100px;
+    width: auto;
+    object-fit: none;
+}
+.icon-img-hover {
+    display: none;
+}
+.icon-link:hover .icon-img-hover {
+    display: inline;
+}
+.icon-link:hover .icon-img-default {
+    display: none;
+}
+.form-control {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #B1B1B1;
+    border-color: #B1B1B1;
+    background-color: rgb(87,87,86);
+}
+footer {
+    background-color: rgb(60,60,59);
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+footer .row {
+    margin-right: 0;
+    margin-left: 0;
+}
+footer p {
+    color: #B1B1B1;
+    font-size: 14px;
+}
+footer h5 {
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+footer h6 {
+    font-weight: normal;
+}
+footer a {
+    color: #B1B1B1;
+}
+footer a:hover {
+    color: #ffffff;
+}
+footer #social {
+    margin-top: 15px;
+}
+footer #social img {
+    padding-right: 5px;
+}
+footer #social a {
+    text-decoration: none;
+}
+#footer-logo {
+    padding-bottom: 20px;
+}
+.video-modal .modal-dialog {
+    border-radius: 0;
+}
+.video-modal .modal-body {
+    background-color: rgb(60,60,59);
+    padding: 50px;
+}
+.video-modal .modal-body .close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    color: #FFFFFF;
+    font-size: 42px;
+}
+.video-modal .modal-body .close:hover {
+    cursor: pointer;
+    cursor: hand;
+}
+.video-modal .modal-body .close:focus {
+    outline: none;
+}
+.video-modal .modal-title {
+    color: #FFFFFF;
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
+}
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 767px) {
+    br {
+        display: none;
+    }
+    table br {
+        display: block;
+    }
+    .footer br {
+        display: block;
+    }
+    .modal-body {
+        padding: 30px;
+    }
+    .modal-body .close {
+        font-size: 25px;
+        top: 2px;
+        right: 9px;
+    }
+}
+.table-hide-empty-cells {
+    border-collapse: separate;
+    empty-cells: hide;
+}
+.no-border {
+    border: 0;
+}
+.left-border {
+    border-left: 1px solid #ddd;
+}
+.right-border {
+    border-right: 1px solid #ddd;
+}
+.table-center-content>tbody>tr>td,
+.table-center-content>tbody>tr>th,
+.table-center-content>thead>tr>th {
+    vertical-align: middle;
+    text-align: center;
+}
+.vertical-center,
+.table>tbody>tr>td.vertical-center {
+    vertical-align: middle;
+}

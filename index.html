@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/favicon.ico">
+
+  <title>Cante Flamenco Tech - Sala de Ensayo</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="fonts/fonts.css" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:300,600" rel="stylesheet">-->
+
+  <!-- Custom styles for this template -->
+  <link href="css/common.css" rel="stylesheet">
+  <link href="css/demo_common.css" rel="stylesheet">
+  <link href="css/demo_vodesc.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <!-- https://github.com/katspaugh/wavesurfer.js/blob/master/README.md -->
+  
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/plugin/wavesurfer.spectrogram.min.js"></script> -->
+  <script src="js/vendor/wavesurfer.js"></script>
+  <script src="js/vendor/wavesurfer.spectrogram.js"></script>
+
+</head>
+
+<!--<body>-->
+<body onresize="redrawAll()" >
+
+<div id="copyright"></div>
+<!--<div id="info"></div>-->
+
+<div id="header" class="container-fluid">
+  
+  <a href="https://www.voiceful.io">
+    <img class="logo" alt="logo voiceful" src="img/logo-white.png" srcset="img/logo-white.png 2x">
+  </a>
+
+  <a href="https://www.upf.edu/web/mtg">
+    <img class="logo" alt="logo mtg-upf" src="img/logo-upfmtg.png" srcset="img/logo-upfmtg.png 2x">
+  </a>
+
+    <!--<a class="close-demo" href="index.html">
+      <span class="close-text"></span>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </a>-->
+</div>
+
+<div id="centerbox" class="center-box">
+  <div class="container-fluid_" style="width:98%;height:98%">
+    
+    <div id="step0-container">
+      <!--<div class="row step-number">
+        <span class="center-block">0</span>
+      </div>
+      <div class="row step-text">STEP LOGIN</div>-->
+      <div class="row step-title">
+        <h1>Identifícate</h1>
+      </div>
+      <div class="row">
+        <div class="form-group disabled">
+          <input id="user-input" class="form-control" type="text" placeholder="Nombre" value=""/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group disabled">
+          <input id="exercise-input" class="form-control" type="hidden" placeholder="Ejercicio" value=""/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="select-ex-group" class="droptop">
+          <a id="select-ex-btn" class="btn btn-default btn-lg btn-select" data-toggle="dropdown" href="#">Ejercicio</a>
+          <ul class="dropdown-menu dropdown-menu-center" role="menu">
+            <li><a class="btn btn-default btn-lg" data-folder="MordenteSuperior" href="#">Mordente superior</a></li>
+            <li><a class="btn btn-default btn-lg" data-folder="MordenteInferior" href="#">Mordente inferior</a></li>
+            <li><a class="btn btn-default btn-lg" data-folder="AtaqueSoplado" href="#">Ataque soplado</a></li>
+            <li><a class="btn btn-default btn-lg" data-folder="Bebeo" href="#">Bebeo</a></li>
+            <li><a class="btn btn-default btn-lg" data-folder="VibratoMarcado" href="#">Vibrato Marcado</a></li>
+            <li><a class="btn btn-default btn-lg" data-folder="Jipio" href="#">Jipío</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="row btns-circle">
+        <!--
+        <a class="btn-circle btn-cancel disabled">
+          <div class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </div>
+          <div class="btn-circle-text">CANCELAR</div>
+        </a>
+      -->
+        <a class="btn-circle btn-confirm disabled">
+          <div class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          </div>
+          <div class="btn-circle-text">CONFIRMAR</div>
+        </a>
+      </div>
+    </div>
+
+    <div id="step1-container">
+      <!--<div class="row step-number">
+        <span class="center-block">1</span>
+      </div>-->
+      <!--<div class="row step-text">STEP ONE</div> -->
+      <div class="row step-title">
+        <h1>Sala de Ensayo</h1>
+        <div id="user"></div>
+        <div id="exercise"></div>
+      </div>
+      <div class="row">
+        <a id='record-btn' class="btn btn-default btn-lg" href="#">Graba tu voz</a>
+      </div>
+<!--      <div class="row">
+        <a id="audio-pick-btn" class="btn btn-default btn-lg" href="#">Subir una grabación</a>
+        <input id="audio-input" type="file" accept="audio/wav" style="display:none">
+      </div>
+-->
+      <div class="row btns-circle">
+        <a id="back-button" class="btn-circle" href="index.html">
+          <div class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+          </div>
+          <div class="btn-circle-text">ATRAS</div>
+        </a>
+
+        <a class="btn-circle btn-cancel disabled">
+          <div class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </div>
+          <div class="btn-circle-text">CANCELAR</div>
+        </a>
+        <a class="btn-circle btn-confirm disabled">
+          <div class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          </div>
+          <div class="btn-circle-text">CONFIRMAR</div>
+        </a>
+      </div>
+    </div>
+    
+    <div id="step2-container">
+      <!--<div class="row step-number">
+        <span class="center-block">2</span>
+      </div>-->
+      <!--<div class="row step-text">STEP TWO</div> -->
+      <div class="row step-title">
+        <h1>Analizando...</h1>
+        <div id="user"></div>
+        <div id="exercise"></div>
+      </div>
+      
+      <div class="row">
+        <a id='play-btn' class="btn btn-default btn-lg" href="#">Reproducir</a>
+      </div>
+
+      <div class="row">
+        <span id="spinner" class="glyphicon glyphicon-refresh spinning" aria-hidden="true"></span>
+        <a id="play-btn" href="#">
+          <img id="play-btn-bg" src="img/player-bg.png" alt="player" />
+          <span id="play-btn-fg" class="glyphicon glyphicon-play" aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div>
+        <!-- audio player -->
+        <div class="audio-player-voice" id="audioPlayer" align="center" style="margin-bottom: 25px;">
+          <audio id="audiotagVoice" style="width:50%" controls src="" preload="metadata"></audio>
+        </div>
+        
+        <div style="width:100%;text-align:center">
+          <div id="waveform"></div>
+          <div id="wave-spectrogram"></div>
+          <!-- descriptors -->
+          <canvas class="canvas-descriptors" id="descriptorsCanvas" >
+            Tu navegador no soporta el tag HTML5 canvas.
+          </canvas>
+        </div>
+        
+
+      </div>
+
+      <div class="row btns-circle">
+        <a id="repeat-button" class="btn-circle disabled" href="index.html">
+          <div class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+          </div>
+          <div class="btn-circle-text">REPETIR</div>
+        </a>
+
+<!--        <a class="btn-circle disabled" href="demos.html">
+          <div class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </div>
+          <div class="btn-circle-text">CERRAR</div>
+        </a>
+        <a id="share-btn" class="btn-circle disabled">
+          <div class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+          </div>
+          <div class="btn-circle-text">COMPARTIR</div>
+        </a>
+-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div id="out">
+  <canvas class="canvas-descriptors" id="descriptorsCanvas" >
+          Your browser does not support the HTML5 canvas tag.
+  </canvas>
+</div>-->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/vendor/ie10-viewport-bug-workaround.js"></script>
+<script src="js/vendor/recorder.js"></script>
+<script src="js/vendor/howler.core.min.js"></script>
+<script src="js/demo_common.js"></script>
+<script src="js/vodesc.js"></script>
+</body>
+</html>

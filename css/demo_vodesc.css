@@ -1,0 +1,275 @@
+
+body {
+    background: url("../img/bg-canteflamenco_small.png") no-repeat left top fixed;
+    /*background: url("../img/bg_canteflamenco.png") no-repeat left center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+}
+
+@media screen and (min-width: 800px) {
+  body {
+	background: url("../img/bg-canteflamenco.png") no-repeat left top fixed;
+    /*background: url("../img/bg_canteflamenco.png") no-repeat left center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+  }
+}
+
+#copyright { 
+    height: 20px; 
+    position: fixed; 
+    bottom:0%;
+    width:100%; 
+    background-color: #393838; 
+    opacity: 0.5;
+    color: white;
+    text-align:left;
+    padding-left: 10px
+}
+
+#info { 
+    height: 20px; 
+    position: fixed; 
+    bottom:0%;
+    width:100%; 
+    background-color: #393838; 
+    opacity: 0.4;
+    color: white;
+    text-align:right;
+    padding-right: 10px
+}
+
+#user { 
+    height: 20px;  
+    color: #CCCCCC;
+    text-align:center;
+}
+
+#exercise { 
+    height: 20px;  
+    color: #CCCCCC;
+    text-align:center;
+}
+
+.step-number {
+    color: #e9545c;
+}
+.btn-default, .btn-default:focus,
+.btn-group .dropdown-menu .btn-default {
+    background-color: #e9545c;
+    width: 285px;
+}
+.btn-default:hover, .btn-default:active,
+.btn-default:active:hover,
+.btn-default:hover:focus, .btn-default:active:focus,
+.btn-default.selected,
+.btn-default.selected:focus, .btn-default.selected:active,
+.btn-default.selected:hover:focus, .btn-default.selected:active:focus,
+.btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
+.btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
+.btn-group .dropdown-menu .btn-default.selected,
+.btn-group .dropdown-menu .btn-default.selected:focus,
+.btn-group .dropdown-menu .btn-default.selected:active,
+.btn-group .dropdown-menu .btn-default.selected:hover:focus,
+.btn-group .dropdown-menu .btn-default.selected:active:focus {
+    color: #e9545c;
+    width: 285px;
+}
+.btn-group .dropdown-menu .btn-default:hover, .btn-group .dropdown-menu .btn-default:active,
+.btn-group .dropdown-menu .btn-default:hover:focus, .btn-group .dropdown-menu .btn-default:active:focus,
+.btn-group .dropdown-menu .btn-default.selected,
+.btn-group .dropdown-menu .btn-default.selected:focus,
+.btn-group .dropdown-menu .btn-default.selected:active,
+.btn-group .dropdown-menu .btn-default.selected:hover:focus,
+.btn-group .dropdown-menu .btn-default.selected:active:focus {
+    border-color: #e9545c;
+    width: 250px;
+}
+a.btn-circle:hover .btn {
+    color: #e9545c;
+}
+
+input.form-control {
+    height: 50px;
+    width: 285px;
+
+    margin: auto;
+    text-align: center !important;
+    /*background-color: rgba(126, 175, 159,0.95);*/
+    background-color: #e9545c;
+    border-width: 2px;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*left: 49% !important;
+    right: auto !important;
+    
+    transform: translate(-50%, 0) !important;*/
+}
+
+.dropdown-menu {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgba(126, 175, 159,0.95);
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    /*width: 100%;*/
+    width: 285px;
+    top: 29px; /* 29 */
+    /*z-index: -1;*/ /* this does not work on mobile devices because then the click event is not detected */
+    padding-top: 36px; /* 36 */
+    padding-right: 0px;
+    padding-left: 0px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 700px) {
+  .dropdown-menu {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgba(126, 175, 159,0.95);
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    /*width: 100%;*/
+    width: 285px;
+    top: 29px;
+    /*z-index: -1;*/ /* this does not work on mobile devices because then the click event is not detected */
+    padding-top: 36px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.dropdown-menu-center {
+  left: 49% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}
+
+#select-track-group {
+    /*width: 100%;*/
+    width: 285px;
+}
+
+#waveform {
+    /*display: none;
+    position: relative;*/
+	width: 90%;
+    display: inline-block;
+}
+
+/*#waveform wave {
+	height: 80px;
+    display: inline-block;
+}*/
+
+#specLabels{
+    left: 5%;
+    position: absolute!important;
+}
+
+#wave-spectrogram{
+  margin: 10px auto;
+  position: relative;
+  height: 120px;
+  width: 90%;
+  overflow: hidden;
+}
+#wave-spectrogram canvas{
+  left: 0;
+  height: 120px;
+}
+
+#wave-spectrogram spectrogram{
+  height: 120px;
+}
+
+#descriptorsCanvas {
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    display: none;
+    position: relative;
+    width: 90%;
+    height: 120px;
+    image-rendering: optimizeSpeed;             // Older versions of FF
+    image-rendering: -moz-crisp-edges;          // FF 6.0+
+    image-rendering: -webkit-optimize-contrast; // Webkit
+    image-rendering: -o-crisp-edges;            // OS X & Windows Opera (12.02+)
+    image-rendering: optimize-contrast;         // Possible future browsers.
+    -ms-interpolation-mode: nearest-neighbor;   // IE
+}
+
+@media screen and (min-height: 740px) {
+    #wave-spectrogram{
+      height: 150px;
+    }
+    #wave-spectrogram canvas{
+      height: 150px;
+    }
+    #wave-spectrogram spectrogram{
+      height: 150px;
+    }
+    #descriptorsCanvas {
+        height: 150px;
+    }
+}
+
+@media screen and (min-height: 800px) {
+    #wave-spectrogram{
+      height: 180px;
+    }
+    #wave-spectrogram canvas{
+      height: 180px;
+    }
+    #wave-spectrogram spectrogram{
+      height: 180px;
+    }
+    #descriptorsCanvas {
+        height: 180px;
+    }
+}
+
+@media screen and (min-height: 900px) {
+    #wave-spectrogram{
+      height: 230px;
+    }
+    #wave-spectrogram canvas{
+      height: 230px;
+    }
+    #wave-spectrogram spectrogram{
+      height: 230px;
+    }
+    #descriptorsCanvas {
+        height: 230px;
+    }
+}
+
+#audiotagVoice {
+	background-color: transparent;
+}
+
+#audioPlayer {
+	display: none;
+}
