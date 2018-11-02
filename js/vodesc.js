@@ -665,6 +665,8 @@ function drawDescriptors()
   var maxPitchGUI = Math.ceil((maxPitchCents + 200.0) / 100.0) * 100.0;
   var rangePitchGUI = Math.max(1200.0,maxPitchGUI-minPitchGUI);
 
+  var first_oct = 55;
+  var count_oct = Math.floor(Math.log2(minPitch/first_oct))+1;
   //BEGIN DRAW BACKGROUND
   var lastidx = -1;
   var lasti = 0;
@@ -684,9 +686,12 @@ function drawDescriptors()
             
             if (idx == 0)
             {
-              ctx.font = "12px Arial";
-              ctx.fillStyle = 'rgb(' + 200 + ', ' + 10 + ', ' + 10 + ')';
-              ctx.fillText("A",10,h-lasti);
+              ctx.font = "11px Arial";
+              ctx.fillStyle = 'rgb(' + 10 + ', ' + 10 + ', ' + 10 + ')';
+              
+              var hz_ = Math.pow(2,count_oct)*first_oct;
+              count_oct = count_oct+1;
+              ctx.fillText("La ("+ hz_.toString() +" Hz)",10,h-lasti);
             }
 
             lasti = i;
