@@ -26,7 +26,7 @@ var step1Title = step1Container.find('.step-title h1'),
     btnCancel1 = btnsCircle1.filter('.btn-cancel'),
     audioPlayer1 = step2Container.find('#audioPlayer');
 
-/* *** STEP 2 *** */
+/* *** BEGIN STEP 2 *** */
 
 var step2Title = step2Container.find('.step-title h1'),
     btnsCircle2 = step2Container.find('.btns-circle').find('a'),
