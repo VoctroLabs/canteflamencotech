@@ -206,6 +206,28 @@ input.form-control {
   height: 120px;
 }
 
+#wave-timeline{
+  margin: 10px auto;
+  position: relative;
+  /*height: 120px;*/
+  width: 90%;
+  overflow: hidden;
+}
+
+
+#wave-timeline canvas{
+  left: 0;
+/*  height: 120px;*/
+}
+
+#spectrogram-labels{
+    width: 100%;
+}
+
+/*#wave-timeline timeline{
+  height: 120px;
+}*/
+
 #descriptorsCanvas {
     background-color: #FFFFFF;
     border: 1px solid black;
