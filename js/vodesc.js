@@ -445,6 +445,7 @@ function vodesc() {
 
 
         var SpectrogramPlugin = window.WaveSurfer.spectrogram;
+        var TimelinePlugin = window.WaveSurfer.timeline;
 
         wavesurfer = WaveSurfer.create({
               container: '#waveform',
@@ -463,7 +464,19 @@ function vodesc() {
                 SpectrogramPlugin.create({ container: '#wave-spectrogram',
                                            fftSamples: 4096,
                                            labels: false
-                                         })
+                                         }),
+                TimelinePlugin.create({ container: '#wave-timeline',
+                                        height: 20,
+                                        notchPercentHeight: 90,
+                                        labelPadding: 5,
+                                        unlabeledNotchColor: '#f0f0f0',
+                                        primaryColor: '#f0f0f0',
+                                        secondaryColor: '#f0f0f0',
+                                        primaryFontColor: '#f0f0f0',
+                                        secondaryFontColor: '#f0f0f0',
+                                        fontFamily: 'Arial',
+                                        fontSize: 10
+                                      })
               ]
             });
         
@@ -471,11 +484,12 @@ function vodesc() {
               updateVoiceAudioTime(this);
             });
 
+
         wavesurfer.load(audioelement.src);
 
         /*wavesurfer.on('ready', function () 
         {
-          drawDescriptors();
+          //drawDescriptors();
         });*/
 
         /*var responsiveWave = wavesurfer.util.debounce(function() {
@@ -509,6 +523,7 @@ function vodesc() {
             //voiceful_descriptors = JSON.parse(JSON.stringify(data));
 
             drawDescriptors();
+            drawSpectrogramLabels();
 
             setTimeout(function () {
               if (1) {
@@ -603,6 +618,49 @@ function HzToCents(Hz)
     return -1e10;
 }
 
+function drawSpectrogramLabels()
+{
+  var c = document.querySelector('#spectrogram-labels');
+  
+  /* Begin size adjusting. */
+  c.width = c.offsetWidth;
+  c.height = c.offsetHeight;
+  /* End size adjusting. */
+
+  var h = c.height;
+  var w = c.width;
+  
+  ctx = c.getContext("2d");
+  ctx.translate(0.5, 0.5);
+  //ctx.scale(2,2);
+  
+
+  var font = 11;
+  ctx.font = font + 'px Arial';
+  ctx.fillStyle = 'rgb(' + 250 + ', ' + 250 + ', ' + 250 + ')';
+
+
+  ctx.textAlign = "left";
+  ctx.fillText("- 2.5 KHz", 4, 15);  
+
+
+  ctx.textAlign = "right";
+  ctx.fillText("tiempo (s)", ctx.canvas.width-10, ctx.canvas.height-8);
+
+  var text = "frecuencia (Hz)";
+  var metrics = ctx.measureText(text);
+  var new_x = font/2;
+  var new_y = h/2;
+
+  ctx.save();
+  ctx.translate(new_x, new_y);
+  ctx.rotate(-Math.PI/2);
+  ctx.textAlign = "center";
+  ctx.fillText(text, 0, font/2);
+  ctx.restore();
+
+}
+
 function drawDescriptors()
 {
   var c, surface;
@@ -621,6 +679,7 @@ function drawDescriptors()
 
   ctx = c.getContext("2d");
   ctx.translate(0.5, 0.5);
+  //ctx.scale(2,2);
 
   var currentIdx = 0;
   var frameDur = voiceful_descriptors.pitch[1][0] - voiceful_descriptors.pitch[0][0];
@@ -691,7 +750,7 @@ function drawDescriptors()
               
               var hz_ = Math.pow(2,count_oct)*first_oct;
               count_oct = count_oct+1;
-              ctx.fillText("La ("+ hz_.toString() +" Hz)",10,h-lasti);
+              ctx.fillText("La ("+ hz_.toString() +" Hz)",20,h-lasti);
             }
 
             lasti = i;
@@ -759,6 +818,25 @@ function drawDescriptors()
     }
   }
   ctx.stroke();
+
+  var font = 11;
+  ctx.font = font + 'px Arial';
+  ctx.fillStyle = 'rgb(' + 10 + ', ' + 10 + ', ' + 10 + ')';
+  ctx.textAlign = "right";
+  ctx.fillText("tiempo (s)", ctx.canvas.width-10, ctx.canvas.height-8);
+
+  var text = "semitonos";
+  var metrics = ctx.measureText(text);
+  var new_x = font/2;
+  var new_y = h/2;
+
+  ctx.save();
+  ctx.translate(new_x, new_y);
+  ctx.rotate(-Math.PI/2);
+  ctx.textAlign = "center";
+  ctx.fillText(text, 0, font/2);
+  ctx.restore();
+
 }
 
 function drawDescriptors2()
@@ -803,6 +881,7 @@ function redrawAll()
     if (document.getElementById("descriptorsCanvas").style.display != '')
     {
         drawDescriptors();
+        drawSpectrogramLabels();
     }
 }
 

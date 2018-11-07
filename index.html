@@ -39,6 +39,7 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/plugin/wavesurfer.spectrogram.min.js"></script> -->
   <script src="js/vendor/wavesurfer.js"></script>
   <script src="js/vendor/wavesurfer.spectrogram.js"></script>
+  <script src="js/vendor/wavesurfer.timeline.js"></script>
 
 </head>
 
@@ -191,7 +192,11 @@
         
         <div style="width:100%;text-align:center">
           <div id="waveform"></div>
-          <div id="wave-spectrogram"></div>
+          <div id="wave-timeline"></div>
+          <div id="wave-spectrogram">
+            <canvas id="spectrogram-labels" style="position: absolute; left: 0; top: 0; z-index: 2;">
+            </canvas>
+          </div>
           <!-- descriptors -->
           <canvas class="canvas-descriptors" id="descriptorsCanvas" >
             Tu navegador no soporta el tag HTML5 canvas.
