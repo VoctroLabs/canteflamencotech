@@ -730,20 +730,20 @@ function drawDescriptors()
   var lastidx = -1;
   var lasti = 0;
   ctx.lineWidth = 1;
+  var offset = ((minPitchGUI / 100.0) + 9600) % 12;
   for (var i=0;i<h;i++)
   {
-    var offset = ((minPitchGUI / 100.0) + 9600) % 12;
     var idx = (Math.round(((i/h) * rangePitchGUI) / 100.0) + offset) % 12;
     
     if (idx != lastidx)
     {
         if (lastidx > -1)
         {
-            var colorValue = 255 - (idx*10);
+            var colorValue = 255 - (lastidx*10);
             ctx.fillStyle = 'rgb(' + colorValue + ', ' + colorValue + ', ' + colorValue + ')';
             ctx.fillRect(0, h-i, w, i-lasti);
             
-            if (idx == 0)
+            if (idx == 1)
             {
               ctx.font = "11px Arial";
               ctx.fillStyle = 'rgb(' + 10 + ', ' + 10 + ', ' + 10 + ')';
